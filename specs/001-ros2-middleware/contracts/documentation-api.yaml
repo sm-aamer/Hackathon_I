@@ -1,0 +1,105 @@
+# API Contract: Documentation Search and Retrieval
+
+## Overview
+This document defines the API contract for the search and retrieval functionality that will support the RAG (Retrieval Augmented Generation) capabilities of the documentation site.
+
+## Base URL
+`/api/v1`
+
+## Endpoints
+
+### Search Documentation
+**Endpoint**: `GET /search`
+**Description**: Search through the documentation content
+
+#### Query Parameters
+- `q` (string, required): Search query
+- `limit` (integer, optional): Maximum number of results (default: 10, max: 50)
+- `module` (string, optional): Filter by specific module
+- `chapter` (string, optional): Filter by specific chapter
+
+#### Response
+```json
+{
+  "results": [
+    {
+      "id": "string",
+      "title": "string",
+      "content_snippet": "string",
+      "url": "string",
+      "module": "string",
+      "chapter": "string",
+      "score": "number"
+    }
+  ],
+  "total_count": "number",
+  "has_more": "boolean"
+}
+```
+
+### Get Document Chunk
+**Endpoint**: `GET /document/{documentId}/chunk/{chunkId}`
+**Description**: Retrieve a specific chunk of a document
+
+#### Path Parameters
+- `documentId` (string, required): ID of the document
+- `chunkId` (string, required): ID of the specific chunk
+
+#### Response
+```json
+{
+  "id": "string",
+  "content": "string",
+  "metadata": {
+    "module": "string",
+    "chapter": "string",
+    "section": "string"
+  },
+  "previous_chunk_id": "string",
+  "next_chunk_id": "string"
+}
+```
+
+### Chat with Documentation
+**Endpoint**: `POST /chat`
+**Description**: Send a query and receive a response based on the documentation content
+
+#### Request Body
+```json
+{
+  "query": "string",
+  "context_size": "integer",
+  "temperature": "number"
+}
+```
+
+#### Response
+```json
+{
+  "response": "string",
+  "sources": [
+    {
+      "title": "string",
+      "url": "string",
+      "confidence": "number"
+    }
+  ]
+}
+```
+
+## Error Responses
+All endpoints may return the following error responses:
+
+- `400 Bad Request`: Invalid request parameters
+- `404 Not Found`: Resource not found
+- `500 Internal Server Error`: Server error
+
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "object"
+  }
+}
+```

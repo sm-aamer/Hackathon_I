@@ -1,0 +1,133 @@
+# Isaac Simulation Service API Contract
+
+## Overview
+This document defines the API contract for Isaac simulation services that would support the RAG (Retrieval Augmented Generation) capabilities of the Isaac robotics documentation content.
+
+## Base URL
+`/api/v1`
+
+## Endpoints
+
+### Isaac Sim Environment Service
+**Endpoint**: `POST /isaac/sim/environments`
+**Description**: Create and configure Isaac simulation environments for training and testing
+
+#### Request Body
+```json
+{
+  "environment_name": "string",
+  "scene_config": {
+    "lighting_conditions": "string",
+    "objects": ["string"],
+    "physics_settings": {
+      "gravity": [float, float, float],
+      "solver_iterations": "integer"
+    }
+  },
+  "output_format": "synthetic_data|rendering|point_cloud"
+}
+```
+
+#### Response
+```json
+{
+  "environment_id": "string",
+  "status": "created|running|completed",
+  "generated_data_url": "string",
+  "estimated_completion": "timestamp"
+}
+```
+
+### Isaac ROS Perception Pipeline Service
+**Endpoint**: `POST /isaac/perception/pipelines`
+**Description**: Configure and execute Isaac ROS perception pipelines
+
+#### Request Body
+```json
+{
+  "pipeline_name": "string",
+  "algorithm_type": "vslam|object_detection|segmentation",
+  "input_sources": ["camera", "lidar", "imu"],
+  "acceleration_enabled": "boolean",
+  "performance_target": {
+    "min_fps": "integer",
+    "max_latency_ms": "integer"
+  }
+}
+```
+
+#### Response
+```json
+{
+  "pipeline_id": "string",
+  "status": "configured|running|completed",
+  "processing_results": {
+    "frames_processed": "integer",
+    "average_fps": "number",
+    "accuracy_metrics": "object"
+  }
+}
+```
+
+### Isaac Navigation Service
+**Endpoint**: `POST /isaac/navigation/plan`
+**Description**: Generate navigation plans for humanoid robots using Isaac Nav2
+
+#### Request Body
+```json
+{
+  "robot_type": "humanoid",
+  "start_pose": {
+    "position": [float, float, float],
+    "orientation": [float, float, float, float]
+  },
+  "goal_pose": {
+    "position": [float, float, float],
+    "orientation": [float, float, float, float]
+  },
+  "environment_map": "string",
+  "locomotion_constraints": {
+    "max_step_height": "float",
+    "foot_placement_accuracy": "float",
+    "balance_thresholds": "object"
+  }
+}
+```
+
+#### Response
+```json
+{
+  "plan_id": "string",
+  "status": "success|partial_success|failed",
+  "trajectory": [
+    {
+      "pose": {
+        "position": [float, float, float],
+        "orientation": [float, float, float, float]
+      },
+      "gait_pattern": "string",
+      "timestamp": "timestamp"
+    }
+  ],
+  "execution_risks": ["string"]
+}
+```
+
+## Error Responses
+All endpoints may return the following error responses:
+
+- `400 Bad Request`: Invalid request parameters
+- `404 Not Found`: Resource not found
+- `429 Too Many Requests`: Rate limit exceeded
+- `500 Internal Server Error`: Server error
+- `503 Service Unavailable`: Isaac simulation resources unavailable
+
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "object"
+  }
+}
+```

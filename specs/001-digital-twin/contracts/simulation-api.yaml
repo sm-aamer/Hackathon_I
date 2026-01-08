@@ -1,0 +1,105 @@
+# API Contract: Simulation Content and Integration
+
+## Overview
+This document defines the API contract for the simulation content integration that will support the RAG (Retrieval Augmented Generation) capabilities of the simulation documentation in Module-2.
+
+## Base URL
+`/api/v1`
+
+## Endpoints
+
+### Search Simulation Content
+**Endpoint**: `GET /search/simulation`
+**Description**: Search through the simulation documentation content
+
+#### Query Parameters
+- `q` (string, required): Search query
+- `limit` (integer, optional): Maximum number of results (default: 10, max: 50)
+- `simulation_tool` (string, optional): Filter by specific tool (gazebo, unity, sensors)
+- `chapter` (string, optional): Filter by specific chapter
+
+#### Response
+```json
+{
+  "results": [
+    {
+      "id": "string",
+      "title": "string",
+      "content_snippet": "string",
+      "url": "string",
+      "module": "string",
+      "chapter": "string",
+      "simulation_tool": "string",
+      "score": "number"
+    }
+  ],
+  "total_count": "number",
+  "has_more": "boolean"
+}
+```
+
+### Get Simulation Concepts
+**Endpoint**: `GET /concepts/simulation/{conceptId}`
+**Description**: Retrieve a specific simulation concept with examples and best practices
+
+#### Path Parameters
+- `conceptId` (string, required): ID of the simulation concept
+
+#### Response
+```json
+{
+  "id": "string",
+  "name": "string",
+  "definition": "string",
+  "application": "string",
+  "examples": [
+    {
+      "type": "string",
+      "content": "string",
+      "language": "string"
+    }
+  ],
+  "best_practices": ["string"],
+  "related_concepts": ["string"]
+}
+```
+
+### Get Simulation Configuration
+**Endpoint**: `GET /config/simulation/{tool}/{configId}`
+**Description**: Retrieve a specific simulation configuration example
+
+#### Path Parameters
+- `tool` (string, required): Simulation tool (gazebo, unity)
+- `configId` (string, required): ID of the configuration
+
+#### Response
+```json
+{
+  "id": "string",
+  "tool": "string",
+  "name": "string",
+  "description": "string",
+  "configuration": "string",
+  "parameters": {
+    "param_name": "param_value"
+  },
+  "comments": "string"
+}
+```
+
+## Error Responses
+All endpoints may return the following error responses:
+
+- `400 Bad Request`: Invalid request parameters
+- `404 Not Found`: Resource not found
+- `500 Internal Server Error`: Server error
+
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "object"
+  }
+}
+```
