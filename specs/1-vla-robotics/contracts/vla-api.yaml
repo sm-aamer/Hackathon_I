@@ -1,0 +1,337 @@
+openapi: 3.0.3
+info:
+  title: Vision-Language-Action (VLA) API
+  description: API for integrating voice commands with robotic actions using LLM-based cognitive planning
+  version: 1.0.0
+servers:
+  - url: https://vla-api.example.com/v1
+    description: Production server
+
+paths:
+  /voice/recognize:
+    post:
+      summary: Convert voice input to text command
+      description: Accepts audio data and returns recognized text with confidence score
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                audio:
+                  type: string
+                  format: binary
+                  description: Audio file in WAV, MP3, or FLAC format
+                language:
+                  type: string
+                  default: en-US
+                  description: Language code for speech recognition
+      responses:
+        '200':
+          description: Successfully recognized speech
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoiceRecognitionResponse'
+        '400':
+          description: Invalid audio format or poor quality
+        '500':
+          description: Internal server error during recognition
+
+  /interpret/command:
+    post:
+      summary: Interpret natural language command
+      description: Takes natural language text and returns structured intent with parameters
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandInterpretationRequest'
+      responses:
+        '200':
+          description: Successfully interpreted command
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandInterpretationResponse'
+        '400':
+          description: Unrecognized or ambiguous command
+        '500':
+          description: Internal server error during interpretation
+
+  /plan/actions:
+    post:
+      summary: Generate action plan from interpretation
+      description: Creates a sequence of ROS 2 actions based on the command interpretation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionPlanningRequest'
+      responses:
+        '200':
+          description: Successfully generated action plan
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionPlanResponse'
+        '400':
+          description: Cannot generate plan for the given interpretation
+        '500':
+          description: Internal server error during planning
+
+  /execute/plan:
+    post:
+      summary: Execute an action plan on the robot
+      description: Sends the action plan to the robot for execution and returns execution status
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionExecutionRequest'
+      responses:
+        '200':
+          description: Successfully started execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionExecutionResponse'
+        '400':
+          description: Invalid action plan or robot not available
+        '500':
+          description: Internal server error during execution
+
+components:
+  schemas:
+    VoiceRecognitionResponse:
+      type: object
+      properties:
+        commandId:
+          type: string
+          description: Unique identifier for the recognized command
+        text:
+          type: string
+          description: Recognized text from the audio
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence score of the recognition
+        language:
+          type: string
+          description: Detected language of the input
+        duration:
+          type: number
+          format: float
+          description: Duration of the audio in seconds
+
+    CommandInterpretationRequest:
+      type: object
+      required:
+        - text
+        - context
+      properties:
+        text:
+          type: string
+          description: Natural language command text
+        context:
+          type: object
+          description: Contextual information for interpretation
+          properties:
+            robotPosition:
+              $ref: '#/components/schemas/Position'
+            environment:
+              type: object
+              description: Environmental context
+            sessionHistory:
+              type: array
+              items:
+                type: object
+                description: Previous commands in session
+
+    CommandInterpretationResponse:
+      type: object
+      properties:
+        interpretationId:
+          type: string
+          description: Unique identifier for the interpretation
+        intent:
+          type: string
+          enum: [NAVIGATE, MANIPULATE, PERCEIVE, QUERY, WAIT]
+          description: Classified intent of the command
+        parameters:
+          type: object
+          description: Parameters specific to the intent
+          additionalProperties: true
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence score of the interpretation
+        actionSequence:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionStep'
+
+    ActionStep:
+      type: object
+      properties:
+        actionType:
+          type: string
+          enum: [NAVIGATION_GOAL, MANIPULATION_GRAB, MANIPULATION_PLACE, PERCEPTION_RECOGNIZE, SYSTEM_WAIT]
+          description: Type of action to perform
+        parameters:
+          type: object
+          description: Action-specific parameters
+          additionalProperties: true
+        order:
+          type: integer
+          description: Order of execution in the sequence
+
+    ActionPlanningRequest:
+      type: object
+      required:
+        - interpretationId
+        - robotCapabilities
+      properties:
+        interpretationId:
+          type: string
+          description: Reference to the command interpretation
+        robotCapabilities:
+          type: object
+          description: Capabilities of the target robot
+          properties:
+            mobility:
+              type: boolean
+              description: Can robot move
+            manipulation:
+              type: boolean
+              description: Can robot manipulate objects
+            perception:
+              type: boolean
+              description: Can robot perceive environment
+        environment:
+          $ref: '#/components/schemas/EnvironmentModel'
+
+    ActionPlanResponse:
+      type: object
+      properties:
+        planId:
+          type: string
+          description: Unique identifier for the action plan
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActionStep'
+        estimatedDuration:
+          type: number
+          format: float
+          description: Estimated time to execute the plan in seconds
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence in successful execution
+
+    ActionExecutionRequest:
+      type: object
+      required:
+        - planId
+        - robotId
+      properties:
+        planId:
+          type: string
+          description: Reference to the action plan to execute
+        robotId:
+          type: string
+          description: Identifier of the target robot
+        priority:
+          type: integer
+          minimum: 0
+          maximum: 10
+          default: 5
+          description: Priority level for execution
+
+    ActionExecutionResponse:
+      type: object
+      properties:
+        executionId:
+          type: string
+          description: Unique identifier for the execution session
+        status:
+          type: string
+          enum: [QUEUED, EXECUTING, COMPLETED, FAILED, CANCELLED]
+          description: Current status of execution
+        estimatedCompletion:
+          type: string
+          format: date-time
+          description: Estimated time of completion
+        robotState:
+          type: string
+          enum: [IDLE, MOVING, MANIPULATING, PERCEIVING, ERROR]
+          description: Current state of the robot
+
+    Position:
+      type: object
+      properties:
+        x:
+          type: number
+          format: float
+        y:
+          type: number
+          format: float
+        z:
+          type: number
+          format: float
+        orientation:
+          type: object
+          properties:
+            x:
+              type: number
+              format: float
+            y:
+              type: number
+              format: float
+            z:
+              type: number
+              format: float
+            w:
+              type: number
+              format: float
+
+    EnvironmentModel:
+      type: object
+      properties:
+        objects:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              type:
+                type: string
+              position:
+                $ref: '#/components/schemas/Position'
+              properties:
+                type: object
+        obstacles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+        navigableAreas:
+          type: array
+          items:
+            type: object
+            properties:
+              min:
+                $ref: '#/components/schemas/Position'
+              max:
+                $ref: '#/components/schemas/Position'
