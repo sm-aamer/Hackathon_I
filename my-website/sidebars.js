@@ -64,6 +64,16 @@ const sidebars = {
         'module-4/chapter-3-autonomous-humanoid'
       ],
     },
+    {
+      type: 'category',
+      label: 'Deployment & Optimization',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'deployment-optimization/intro',
+        'deployment-optimization/getting-started-speed-insights'
+      ],
+    },
   ],
 };
 
