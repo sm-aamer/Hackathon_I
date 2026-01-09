@@ -13,7 +13,7 @@ This chapter covers the configuration and use of Navigation2 (Nav2) for humanoid
 
 Navigation2 (Nav2) is ROS 2's state-of-the-art navigation framework, but when applied to humanoid robots, it requires specialized configurations to accommodate the unique challenges of bipedal locomotion. Key considerations include:
 
-Nav2 for humanoid robots builds upon the navigation concepts from standard ROS 2 navigation, which are introduced in [Module 1: The Robotic Nervous System](/module-1/chapter-1-ros2-fundamentals). The humanoid-specific configurations leverage simulation environments that can be created following the principles in [Module 2: The Digital Twin](/module-2/chapter-1-gazebo-basics).
+Nav2 for humanoid robots builds upon the navigation concepts from standard ROS 2 navigation, which are introduced in [Module 1: The Robotic Nervous System](/docs/module-1/chapter-1-ros2-fundamentals). The humanoid-specific configurations leverage simulation environments that can be created following the principles in [Module 2: The Digital Twin](/docs/module-2/chapter-1-gazebo-basics).
 
 ## Cross-Module Connections
 
@@ -1117,5 +1117,5 @@ Explore related topics in Module 3:
 
 Or explore other modules:
 
-- [Module 1: The Robotic Nervous System (ROS 2)](/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
-- [Module 2: The Digital Twin (Gazebo & Unity)](/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts
+- [Module 1: The Robotic Nervous System (ROS 2)](/docs/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
+- [Module 2: The Digital Twin (Gazebo & Unity)](/docs/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts

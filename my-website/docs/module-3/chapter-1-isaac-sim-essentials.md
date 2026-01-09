@@ -13,7 +13,7 @@ This chapter covers the fundamentals of NVIDIA Isaac Sim, a powerful simulation 
 
 NVIDIA Isaac Sim is a comprehensive robotics simulation environment built on NVIDIA Omniverse. It provides:
 
-This simulation environment builds upon the ROS 2 fundamentals covered in [Module 1: The Robotic Nervous System](/module-1/chapter-1-ros2-fundamentals), allowing you to simulate the ROS 2 nodes, topics, and services you learned about. Additionally, Isaac Sim can complement the digital twin concepts from [Module 2: The Digital Twin](/module-2/chapter-1-gazebo-basics) by providing photorealistic rendering capabilities that enhance the realism of your simulated environments.
+This simulation environment builds upon the ROS 2 fundamentals covered in [Module 1: The Robotic Nervous System](/docs/module-1/chapter-1-ros2-fundamentals), allowing you to simulate the ROS 2 nodes, topics, and services you learned about. Additionally, Isaac Sim can complement the digital twin concepts from [Module 2: The Digital Twin](/docs/module-2/chapter-1-gazebo-basics) by providing photorealistic rendering capabilities that enhance the realism of your simulated environments.
 
 ## Cross-Module Connections
 
@@ -1072,5 +1072,5 @@ Continue with the next topics in Module 3:
 
 Or explore other modules:
 
-- [Module 1: The Robotic Nervous System (ROS 2)](/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
-- [Module 2: The Digital Twin (Gazebo & Unity)](/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts
+- [Module 1: The Robotic Nervous System (ROS 2)](/docs/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
+- [Module 2: The Digital Twin (Gazebo & Unity)](/docs/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts

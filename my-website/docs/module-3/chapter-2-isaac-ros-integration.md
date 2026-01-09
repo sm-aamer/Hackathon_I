@@ -13,7 +13,7 @@ This chapter covers the integration of NVIDIA Isaac with ROS (Robot Operating Sy
 
 Isaac ROS is NVIDIA's collection of hardware-accelerated perception and navigation packages designed to seamlessly integrate with ROS 2. It provides:
 
-Isaac ROS directly extends the ROS 2 concepts introduced in [Module 1: The Robotic Nervous System](/module-1/chapter-1-ros2-fundamentals) by adding GPU-accelerated processing capabilities. The perception pipelines in Isaac ROS can process the sensor data formats you learned about in [Module 2: The Digital Twin](/module-2/chapter-3-sensor-simulation), but with dramatically improved performance.
+Isaac ROS directly extends the ROS 2 concepts introduced in [Module 1: The Robotic Nervous System](/docs/module-1/chapter-1-ros2-fundamentals) by adding GPU-accelerated processing capabilities. The perception pipelines in Isaac ROS can process the sensor data formats you learned about in [Module 2: The Digital Twin](/docs/module-2/chapter-3-sensor-simulation), but with dramatically improved performance.
 
 ## Cross-Module Connections
 
@@ -997,5 +997,5 @@ Continue with the next topics in Module 3:
 
 Or explore other modules:
 
-- [Module 1: The Robotic Nervous System (ROS 2)](/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
-- [Module 2: The Digital Twin (Gazebo & Unity)](/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts
+- [Module 1: The Robotic Nervous System (ROS 2)](/docs/module-1/chapter-1-ros2-fundamentals) - Fundamentals of ROS 2
+- [Module 2: The Digital Twin (Gazebo & Unity)](/docs/module-2/chapter-1-gazebo-basics) - Simulation and interaction concepts
