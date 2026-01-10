@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-vercel-project.vercel.app',
+  url: 'https://hackathon-i-two.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For static hosting, typically '/'
   baseUrl: '/',
