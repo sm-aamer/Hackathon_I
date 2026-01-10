@@ -1,0 +1,28 @@
+{
+  "id": "module-2/chapter-2-unity-interaction",
+  "title": "Chapter 2 - Unity for Human-Robot Interaction",
+  "description": "Introduction to Unity for Robotics",
+  "source": "@site/docs/module-2/chapter-2-unity-interaction.md",
+  "sourceDirName": "module-2",
+  "slug": "/module-2/chapter-2-unity-interaction",
+  "permalink": "/docs/module-2/chapter-2-unity-interaction",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-2/chapter-2-unity-interaction.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "chapter-2-unity-interaction",
+    "sidebar_label": "Unity for Human-Robot Interaction",
+    "title": "Chapter 2 - Unity for Human-Robot Interaction"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gazebo Simulation Basics",
+    "permalink": "/docs/module-2/chapter-1-gazebo-basics"
+  },
+  "next": {
+    "title": "Sensor Simulation",
+    "permalink": "/docs/module-2/chapter-3-sensor-simulation"
+  }
+}

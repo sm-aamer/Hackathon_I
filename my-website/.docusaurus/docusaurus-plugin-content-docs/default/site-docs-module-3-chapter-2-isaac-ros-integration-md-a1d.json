@@ -1,0 +1,68 @@
+{
+  "id": "module-3/chapter-2-isaac-ros-integration",
+  "title": "Isaac ROS Integration",
+  "description": "Learn about NVIDIA Isaac ROS integration focusing on accelerated perception pipelines and VSLAM for humanoid robotics applications.",
+  "source": "@site/docs/module-3/chapter-2-isaac-ros-integration.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/chapter-2-isaac-ros-integration",
+  "permalink": "/docs/module-3/chapter-2-isaac-ros-integration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-3/chapter-2-isaac-ros-integration.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "isaac-ros",
+      "permalink": "/docs/tags/isaac-ros"
+    },
+    {
+      "inline": true,
+      "label": "ros-integration",
+      "permalink": "/docs/tags/ros-integration"
+    },
+    {
+      "inline": true,
+      "label": "perception-pipelines",
+      "permalink": "/docs/tags/perception-pipelines"
+    },
+    {
+      "inline": true,
+      "label": "vslam",
+      "permalink": "/docs/tags/vslam"
+    },
+    {
+      "inline": true,
+      "label": "gpu-acceleration",
+      "permalink": "/docs/tags/gpu-acceleration"
+    },
+    {
+      "inline": true,
+      "label": "robotics",
+      "permalink": "/docs/tags/robotics"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Isaac ROS Integration",
+    "sidebar_position": 2,
+    "tags": [
+      "isaac-ros",
+      "ros-integration",
+      "perception-pipelines",
+      "vslam",
+      "gpu-acceleration",
+      "robotics"
+    ],
+    "description": "Learn about NVIDIA Isaac ROS integration focusing on accelerated perception pipelines and VSLAM for humanoid robotics applications."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Isaac Sim Essentials",
+    "permalink": "/docs/module-3/chapter-1-isaac-sim-essentials"
+  },
+  "next": {
+    "title": "Nav2 for Humanoid Navigation",
+    "permalink": "/docs/module-3/chapter-3-nav2-humanoid-navigation"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "module-3/chapter-1-isaac-sim-essentials",
+  "title": "Isaac Sim Essentials",
+  "description": "Learn about NVIDIA Isaac Sim fundamentals including photorealistic rendering, physics simulation, and synthetic data generation for humanoid robotics.",
+  "source": "@site/docs/module-3/chapter-1-isaac-sim-essentials.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/chapter-1-isaac-sim-essentials",
+  "permalink": "/docs/module-3/chapter-1-isaac-sim-essentials",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-3/chapter-1-isaac-sim-essentials.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "isaac-sim",
+      "permalink": "/docs/tags/isaac-sim"
+    },
+    {
+      "inline": true,
+      "label": "simulation",
+      "permalink": "/docs/tags/simulation"
+    },
+    {
+      "inline": true,
+      "label": "robotics",
+      "permalink": "/docs/tags/robotics"
+    },
+    {
+      "inline": true,
+      "label": "photorealistic-rendering",
+      "permalink": "/docs/tags/photorealistic-rendering"
+    },
+    {
+      "inline": true,
+      "label": "physics-simulation",
+      "permalink": "/docs/tags/physics-simulation"
+    },
+    {
+      "inline": true,
+      "label": "synthetic-data",
+      "permalink": "/docs/tags/synthetic-data"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Isaac Sim Essentials",
+    "sidebar_position": 1,
+    "tags": [
+      "isaac-sim",
+      "simulation",
+      "robotics",
+      "photorealistic-rendering",
+      "physics-simulation",
+      "synthetic-data"
+    ],
+    "description": "Learn about NVIDIA Isaac Sim fundamentals including photorealistic rendering, physics simulation, and synthetic data generation for humanoid robotics."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 3 Quick Start",
+    "permalink": "/docs/module-3/quickstart"
+  },
+  "next": {
+    "title": "Isaac ROS Integration",
+    "permalink": "/docs/module-3/chapter-2-isaac-ros-integration"
+  }
+}

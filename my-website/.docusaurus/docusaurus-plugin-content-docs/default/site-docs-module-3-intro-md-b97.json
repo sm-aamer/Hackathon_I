@@ -1,0 +1,17 @@
+{
+  "id": "module-3/intro",
+  "title": "Module 3: Coming Soon",
+  "description": "This module will cover advanced topics in Physical AI & Humanoid Robotics.",
+  "source": "@site/docs/module-3/intro.md",
+  "sourceDirName": "module-3",
+  "slug": "/module-3/intro",
+  "permalink": "/docs/module-3/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-3/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "slug": "/module-3/intro"
+  }
+}

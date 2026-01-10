@@ -1,0 +1,68 @@
+{
+  "id": "module-4/chapter-1-voice-to-action",
+  "title": "Voice-to-Action Pipeline",
+  "description": "Learn how to implement voice-controlled robot systems using Whisper API for speech recognition and mapping natural language commands to ROS 2 actions.",
+  "source": "@site/docs/module-4/chapter-1-voice-to-action.md",
+  "sourceDirName": "module-4",
+  "slug": "/module-4/chapter-1-voice-to-action",
+  "permalink": "/docs/module-4/chapter-1-voice-to-action",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-4/chapter-1-voice-to-action.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "voice-recognition",
+      "permalink": "/docs/tags/voice-recognition"
+    },
+    {
+      "inline": true,
+      "label": "whisper",
+      "permalink": "/docs/tags/whisper"
+    },
+    {
+      "inline": true,
+      "label": "speech-to-text",
+      "permalink": "/docs/tags/speech-to-text"
+    },
+    {
+      "inline": true,
+      "label": "robotics",
+      "permalink": "/docs/tags/robotics"
+    },
+    {
+      "inline": true,
+      "label": "command-interpreter",
+      "permalink": "/docs/tags/command-interpreter"
+    },
+    {
+      "inline": true,
+      "label": "ros2-actions",
+      "permalink": "/docs/tags/ros-2-actions"
+    }
+  ],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Voice-to-Action Pipeline",
+    "sidebar_position": 2,
+    "tags": [
+      "voice-recognition",
+      "whisper",
+      "speech-to-text",
+      "robotics",
+      "command-interpreter",
+      "ros2-actions"
+    ],
+    "description": "Learn how to implement voice-controlled robot systems using Whisper API for speech recognition and mapping natural language commands to ROS 2 actions."
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "VLA Module Quickstart",
+    "permalink": "/docs/module-4/quickstart"
+  },
+  "next": {
+    "title": "Cognitive Planning with LLMs",
+    "permalink": "/docs/module-4/chapter-2-cognitive-planning"
+  }
+}

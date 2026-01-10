@@ -1,0 +1,28 @@
+{
+  "id": "module-1/chapter-3-urdf-essentials",
+  "title": "Chapter 3 - Humanoid Robot URDF Essentials",
+  "description": "Introduction to URDF",
+  "source": "@site/docs/module-1/chapter-3-urdf-essentials.md",
+  "sourceDirName": "module-1",
+  "slug": "/module-1/chapter-3-urdf-essentials",
+  "permalink": "/docs/module-1/chapter-3-urdf-essentials",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-1/chapter-3-urdf-essentials.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "chapter-3-urdf-essentials",
+    "title": "Chapter 3 - Humanoid Robot URDF Essentials",
+    "sidebar_label": "Humanoid Robot URDF"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Python Agents + rclpy",
+    "permalink": "/docs/module-1/chapter-2-python-agents"
+  },
+  "next": {
+    "title": "Gazebo Simulation Basics",
+    "permalink": "/docs/module-2/chapter-1-gazebo-basics"
+  }
+}

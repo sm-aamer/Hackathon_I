@@ -1,0 +1,147 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "module-1/chapter-1-ros2-fundamentals",
+          "docs": [
+            {
+              "id": "intro",
+              "path": "/docs/intro"
+            },
+            {
+              "id": "module-1/chapter-1-ros2-fundamentals",
+              "path": "/docs/module-1/chapter-1-ros2-fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1/chapter-2-python-agents",
+              "path": "/docs/module-1/chapter-2-python-agents",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1/chapter-3-urdf-essentials",
+              "path": "/docs/module-1/chapter-3-urdf-essentials",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2/chapter-1-gazebo-basics",
+              "path": "/docs/module-2/chapter-1-gazebo-basics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2/chapter-2-unity-interaction",
+              "path": "/docs/module-2/chapter-2-unity-interaction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2/chapter-3-sensor-simulation",
+              "path": "/docs/module-2/chapter-3-sensor-simulation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2/intro",
+              "path": "/docs/module-2/intro"
+            },
+            {
+              "id": "module-3/chapter-1-isaac-sim-essentials",
+              "path": "/docs/module-3/chapter-1-isaac-sim-essentials",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3/chapter-2-isaac-ros-integration",
+              "path": "/docs/module-3/chapter-2-isaac-ros-integration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3/chapter-3-nav2-humanoid-navigation",
+              "path": "/docs/module-3/chapter-3-nav2-humanoid-navigation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3/intro",
+              "path": "/docs/module-3/intro"
+            },
+            {
+              "id": "module-3/quickstart",
+              "path": "/docs/module-3/quickstart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4/chapter-1-voice-to-action",
+              "path": "/docs/module-4/chapter-1-voice-to-action",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4/chapter-2-cognitive-planning",
+              "path": "/docs/module-4/chapter-2-cognitive-planning",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4/chapter-3-autonomous-humanoid",
+              "path": "/docs/module-4/chapter-3-autonomous-humanoid",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4/intro",
+              "path": "/docs/module-4/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4/quickstart",
+              "path": "/docs/module-4/quickstart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/congratulations",
+              "path": "/docs/tutorial-basics/congratulations"
+            },
+            {
+              "id": "tutorial-basics/create-a-blog-post",
+              "path": "/docs/tutorial-basics/create-a-blog-post"
+            },
+            {
+              "id": "tutorial-basics/create-a-document",
+              "path": "/docs/tutorial-basics/create-a-document"
+            },
+            {
+              "id": "tutorial-basics/create-a-page",
+              "path": "/docs/tutorial-basics/create-a-page"
+            },
+            {
+              "id": "tutorial-basics/deploy-your-site",
+              "path": "/docs/tutorial-basics/deploy-your-site"
+            },
+            {
+              "id": "tutorial-basics/markdown-features",
+              "path": "/docs/tutorial-basics/markdown-features"
+            },
+            {
+              "id": "tutorial-extras/manage-docs-versions",
+              "path": "/docs/tutorial-extras/manage-docs-versions"
+            },
+            {
+              "id": "tutorial-extras/translate-your-site",
+              "path": "/docs/tutorial-extras/translate-your-site"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/module-1/chapter-1-ros2-fundamentals",
+                "label": "module-1/chapter-1-ros2-fundamentals"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

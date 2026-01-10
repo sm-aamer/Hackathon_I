@@ -1,0 +1,28 @@
+{
+  "id": "module-2/chapter-1-gazebo-basics",
+  "title": "Chapter 1 - Gazebo Simulation Basics",
+  "description": "Introduction to Gazebo for Robotics Simulation",
+  "source": "@site/docs/module-2/chapter-1-gazebo-basics.md",
+  "sourceDirName": "module-2",
+  "slug": "/module-2/chapter-1-gazebo-basics",
+  "permalink": "/docs/module-2/chapter-1-gazebo-basics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/module-2/chapter-1-gazebo-basics.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "chapter-1-gazebo-basics",
+    "sidebar_label": "Gazebo Simulation Basics",
+    "title": "Chapter 1 - Gazebo Simulation Basics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Humanoid Robot URDF",
+    "permalink": "/docs/module-1/chapter-3-urdf-essentials"
+  },
+  "next": {
+    "title": "Unity for Human-Robot Interaction",
+    "permalink": "/docs/module-2/chapter-2-unity-interaction"
+  }
+}
