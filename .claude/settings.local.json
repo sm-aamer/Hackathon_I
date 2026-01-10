@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx create-docusaurus@latest my-website classic --typescript=false --package-manager npm)",
-      "Bash(npx create-docusaurus@latest my-website classic --package-manager npm)"
+      "Bash(npx create-docusaurus@latest my-website classic --package-manager npm)",
+      "Bash(dir docs)"
     ]
   }
 }
